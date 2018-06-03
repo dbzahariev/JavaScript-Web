@@ -1,11 +1,11 @@
 {
-  "name": "Excrcise2Node",
+  "name": "Exercise_02_Web-Server",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Use this branch as reference to help you implement the rest of the tasks for the exercise.",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node server.js",
+    "debug": "node --nolazy --inspect-brk=9998 server.js"
   },
   "keywords": [],
   "author": "",
