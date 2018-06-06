@@ -1,6 +1,5 @@
 let http = require('http')
 let fs = require('fs')
-let formidable = require('formidable')
 
 http
     .createServer((req, res) => {
@@ -17,26 +16,8 @@ http
                 res.write(data)
                 res.end()
             })
-        } else {
-            let form = new formidable.IncomingForm()
-
-            form.parse(req, (err, fields, files) => {
-                if (err) {
-                    console.log(err)
-                }
-
-                let file = files.upload
-                let tempPath = file.path
-                let fileName = file.name
-                fs.rename(tempPath, './files/' + fileName, err => {
-                    if (err) {
-                        console.log(err)
-                        return
-                    }
-
-                    res.write('Ok!')
-                    res.end();
-                })
-            })
+        }
+        else {
+            console.log('Tenx!');
         }
     }).listen(1234)
