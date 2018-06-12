@@ -1,4 +1,77 @@
-let http = require('http')
+const mongose = require('mongoose')
+const Cat = require('./models/Cat')
+
+mongose
+    .connect('mongodb://localhost:27017/cats')
+    .then(() => {
+        Cat.find({}).then(cats => {
+            console.log(cats)
+        })
+        // Cat
+        //     .find()
+        //     .then(cats => console.log(cats))
+    })
+
+console.log('Done')
+
+/*
+const mongose = require('mongoose')
+
+let Cat = mongose.model('Cat', {
+    name: {
+        type: String,
+        require: true
+    },
+    age: {
+        type: Number,
+        require: true
+    },
+    color: {
+        type: String
+    }
+})
+
+
+let Owner = new mongoose.Schema({
+    firstName: {
+        type: String,
+        require: true
+    },
+    lastName: {
+        type: String,
+        require: true
+    },
+    cats: [Cat.schema]
+})
+
+let Cat = mongose.model('cats',)
+
+
+mongose
+    .connect('mongodb://localhost:27017/cats')
+    .then(() => {
+        let Cats = new cats
+    })
+
+
+
+
+
+
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+/*let http = require('http')
 let fs = require('fs')
 let formidable = require('formidable')
 
@@ -40,3 +113,4 @@ http
             })
         }
     }).listen(1234)
+    */
