@@ -11,7 +11,6 @@
   "license": "ISC",
   "dependencies": {
     "formidable": "1.2.1",
-    "mongodb": "3.0.10",
-    "mongose": "0.0.2-security"
+    "mongoose": "5.1.5"
   }
 }
