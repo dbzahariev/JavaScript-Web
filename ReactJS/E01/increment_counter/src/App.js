@@ -1,17 +1,20 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import render from './index'
 
-const App = (
-<div className="App">
-  <header className="App-header">
-    <img src={logo} className="App-logo" alt="logo" />
-    <h1 className="App-title">Welcome to React</h1>
-  </header>
-  <p className="App-intro">
-    To get started, edit <code>src/App.js</code> and save to reload.
-  </p>
-</div>
+let counter = 0;
+
+const Counter = () => (
+  <div className="App">
+    <header className="App-header">
+      {counter++}
+    </header>
+    <p className="App-intro">
+      <button onClick={()=>render(Counter(), document.getElementById('root'))}>
+        Click
+      </button>
+    </p>
+  </div>
 );
 
-export default App;
+export default Counter;
