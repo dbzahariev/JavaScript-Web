@@ -1,0 +1,56 @@
+import React, { Component } from 'react';
+import './App.css';
+import './style/app.css'
+import './style/index.css'
+
+class App extends Component {
+  render() {
+    return (
+      <div className="container">
+        <header>&#9993; Contact Book</header>
+        <div id="book">
+          <div id="list">
+            <h1>Contacts</h1>
+            <div className="content">
+              <div className="contact" data-id="id">
+                <span class="avatar small">&#9787;</span>
+                <span class="title">Ivan Ivanov</span>
+              </div>
+
+              <div className="contact" data-id="id">
+                <span class="avatar small">&#9787;</span>
+                <span class="title">Jordan Kirov</span>
+              </div>
+
+              <div className="contact" data-id="id">
+                <span class="avatar small">&#9787;</span>
+                <span class="title">Maria Petrova</span>
+              </div>
+            </div>
+          </div>
+          <div id="details">
+            <h1>Details</h1>
+            <div className="content">
+              <div className="info">
+                <div className="col">
+                  <span class="avatar">&#9787;</span>
+                </div>
+                <div className="col">
+                  <span class="name">Ivan</span>
+                  <span class="name">Ivanov</span>
+                </div>
+              </div>
+              <div className="info">
+                <span class="info-line">&phone; 0887 123 456</span>
+                <span class="info-line">&#9993; i.ivanov@gmail.com</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer>Contact Book SPA &copy; 2017</footer>
+      </div>
+    );
+  }
+}
+
+export default App;

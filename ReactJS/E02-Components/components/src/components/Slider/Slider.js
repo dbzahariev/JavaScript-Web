@@ -31,7 +31,7 @@ export default class Slider extends React.Component {
 
     render = () => (
             <section id="slider">
-                <img className="button" src="/left.png" title="previous" alt="nav" onClick={this.previousEpisode} />
+                < img className = "button" src = "/left.png" title = "previous" alt = "nav" onClick = {this.previousEpisode} />
                 <div className="image-container">
                     <img src={this.state.imageUrl} alt="episode" />
                 </div>
