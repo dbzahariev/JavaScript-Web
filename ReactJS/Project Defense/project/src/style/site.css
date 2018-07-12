@@ -12,11 +12,11 @@ a {
 }
 
 body {
-    background: #dddddd;
+    /* background: #dddddd; */
 }
 
 #container {
-    margin: 10px;
+    /* margin: 10px; */
 }
 
 .content {
@@ -54,35 +54,41 @@ footer {
 }
 
 #loginForm {
-    display: block;
+    /* display: block;
     background: #ddf9c0;
     margin: 10px;
     padding: 10px;
     height: 150px;
-    position: relative;
+    position: relative; */
 }
 
 #loginForm>* {
-    width: 150px;
-    box-sizing: border-box;
+    /* width: 150px;
+    box-sizing: border-box; */
 }
 
 #registerForm {
-    display: block;
+    /* display: block;
     background: #ddf9c0;
     margin: 10px;
     padding: 10px;
     height: 180px;
-    position: relative;
+    position: relative; */
 }
 
 #registerForm>* {
-    width: 150px;
-    box-sizing: border-box;
+    /* width: 150px;
+    box-sizing: border-box; */
 }
 
 #btnLogin, #btnRegister {
-    display: block;
+    /* display: block;
     position: absolute;
-    bottom: 10px;
+    bottom: 10px;  */
+}
+
+#loginForm {
+    /* background: #ddf9c0;
+    margin: 10px;
+    padding: 10px */
 }

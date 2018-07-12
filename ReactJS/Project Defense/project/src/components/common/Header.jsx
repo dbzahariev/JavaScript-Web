@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
 import '../../style/header.css'
-import observer from '../../infrastructures/observer';
+import Observer from '../../infrastructures/Observer'
+
+import {Link} from 'react-router-dom'
 
 export default class Header extends Component{
     constructor(props){
@@ -9,17 +11,18 @@ export default class Header extends Component{
             username: null
         }
 
-        observer.subscriptions(observer.events.loginUser, this.userLoggedIn)
+        Observer.subscribe(Observer.events.loginUser, this.userLoggedIn)
     }
 
     userLoggedIn = username => this.setState({username})
 
     render= ()=>{
         const loggedInSection = 
-        <div id="profile">
-            <span id="username">Hello, {this.state.username}!</span>
-            <a href="" id="linkMenuLogout">logout</a>
-        </div>
+            <div id="profile">
+                <span id="username">Hello, {this.state.username}!
+                <Link to="/logout">logout</Link>
+                </span>
+            </div>
 
         return (
             <header>

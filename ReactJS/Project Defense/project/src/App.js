@@ -2,14 +2,22 @@ import React, { Component } from 'react';
 import './App.css';
 import Header from './components/common/Header';
 import {Route} from 'react-router-dom'
-import Home from './components/home/home';
+import Home from './components/home/Home';
+import Notification from './components/common/Notification';
+import Catalog from './components/common/Navigation';
+import Logout from './components/user/Logout'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header />
-        <Route path='/' exact component={Home} />
+        <div className="content">
+          <Header />
+          <Notification />
+          <Route path='/' exact component={Home} />
+          <Route path='/catalog' exact component={Catalog} />
+          <Route path='/logout' exact component={Logout} />
+          </div>
       </div>
     );
   }
