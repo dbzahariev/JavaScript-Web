@@ -39,11 +39,16 @@ export default class LoginForm extends Component{
         return (
             <form id="loginForm" onSubmit={this.handleSubmit}>
                 <h2>Sign In</h2>
-                <label>Username:</label>
-                <input name="username" onChange={this.handleChange} type="text" value={this.state.username} />
-                <label>Password:</label>
-                <input name="password" onChange={this.handleChange} type="password" value={this.state.password} />
-                <input id="btnLogin" type="submit" value="Sign In" />
+                <div className="form-group">
+                    <label>Username:</label>
+                    <input className="form-control" name="username" onChange={this.handleChange} type="text" value={this.state.username} />
+                </div>
+
+                <div className="form-group">
+                    <label>Password:</label>
+                    <input className="form-control" name="password" onChange={this.handleChange} type="password" value={this.state.password} />
+                </div>
+                <input id="btnLogin" className="btn btn-primary btn-sm mb-2" type="submit" value="Sign In" />
             </form>
         )
     }

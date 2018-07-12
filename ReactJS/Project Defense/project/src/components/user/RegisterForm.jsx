@@ -32,13 +32,19 @@ export default class RegisterForm extends Component {
         return (
         <form id="registerForm" onClick={this.handleSubmit}>
             <h2>Register</h2>
-            <label>Username:</label>
-            <input name="username" onChange={this.handleChange} type="text" />
-            <label>Password:</label>
-            <input name="password" type="password" />
-            <label>Repeat Password:</label>
-            <input name="repeatPass" onChange={this.handleChange} type="password" />
-            <input id="btnRegister" type="submit" defaultValue="Sign Up" />
+            <div className="form-group">
+                <label>Username:</label>
+                <input className="form-control" name="username" onChange={this.handleChange} type="text" />
+            </div>
+            <div className="form-group">
+                <label>Password:</label>
+                <input className="form-control" name="password" type="password" />
+            </div>
+            <div className="form-group">
+                <label>Repeat Password:</label>
+                <input className="form-control"  name="repeatPass" onChange={this.handleChange} type="password" />
+            </div>
+            <input id="btnRegister" className="btn btn-primary btn-sm mb-2" type="submit" defaultValue="Sign Up" />
         </form>
         )
     }
