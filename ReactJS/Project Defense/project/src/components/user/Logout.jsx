@@ -10,6 +10,5 @@ export default class logout extends Component {
 
     render = ()=> {
         this.logout()
-        console.log('bye')
         return <Redirect to ='/' />}
 }

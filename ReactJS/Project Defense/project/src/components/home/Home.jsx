@@ -9,6 +9,14 @@ export default class Home extends Component {
     render = () => {
         return (
             <section id="viewSignIn">
+
+
+
+
+
+
+
+            
                 <div className="welcome">
                     <div className="signup">
                         <LoginForm {...this.props} />
