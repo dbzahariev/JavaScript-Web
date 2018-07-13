@@ -5,10 +5,14 @@ import requester from '../../infrastructures/Requester';
 export default class logout extends Component {
     logout = () => {
         requester.post('user','_logout', 'kinvey')
-            .then(res => { sessionStorage.removeItem('authtoken')})
+            .then(res => {
+                sessionStorage.removeItem('authtoken')
+            }
+        )
     }
 
     render = ()=> {
         this.logout()
-        return <Redirect to ='/' />}
+        return <Redirect to ='/' />
+    }
 }

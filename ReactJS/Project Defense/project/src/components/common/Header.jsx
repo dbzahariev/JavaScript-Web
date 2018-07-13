@@ -17,17 +17,24 @@ export default class Header extends Component{
     userLoggedIn = username => this.setState({username})
 
     render= ()=>{
-        const loggedInSection = 
+        const logout =
             <div id="profile">
                 <span id="username">Hello, {this.state.username}!
                 <Link to="/logout">logout</Link>
                 </span>
             </div>
 
+
+        const login =
+            <div id="profile">
+                <Link to="/login">login</Link>
+            </div>
+
         return (
             <header>
                 <span className="header">Welcome to our shop</span>
-                {this.state.username ? loggedInSection: null}
+                <br/>
+                {this.state.username ? logout : login}
             </header>
         )
     }
