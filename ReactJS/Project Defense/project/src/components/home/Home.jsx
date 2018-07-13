@@ -6,11 +6,9 @@ import About from './About';
 export default class Home extends Component {
     render = () => {
         return (
-            <section id="viewSignIn">
-                <div className="welcome">
-                    <About />
-                </div>
-            </section>
+            <div className="welcome">
+                <About />
+            </div>
         )
     }
-} 
+}
