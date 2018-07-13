@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import '../../style/site.css'
 import '../../style/submit.css'
-import RegisterForm from '../user/RegisterForm';
 import About from './About';
 
 export default class Home extends Component {
@@ -9,9 +8,6 @@ export default class Home extends Component {
         return (
             <section id="viewSignIn">
                 <div className="welcome">
-                    <div className="signup">
-                        <RegisterForm />
-                    </div>
                     <About />
                 </div>
             </section>

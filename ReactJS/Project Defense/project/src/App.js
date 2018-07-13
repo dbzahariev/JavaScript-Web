@@ -7,6 +7,7 @@ import Notification from './components/common/Notification';
 import Catalog from './components/common/Navigation';
 import Logout from './components/user/Logout'
 import Login from './components/containers/NewLogin';
+import register from './components/containers/NewRegister';
 
 
 class App extends Component {
@@ -20,6 +21,7 @@ class App extends Component {
           <Route path='/catalog' exact component={Catalog} />
           <Route path='/logout' exact component={Logout} />
           <Route path="/login" exact component={Login} />
+          <Route path="/register" exact component={register} />
           </div>
       </div>
     );

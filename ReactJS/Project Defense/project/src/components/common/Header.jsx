@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import '../../style/header.css'
 import Observer from '../../infrastructures/Observer'
-
 import {Link} from 'react-router-dom'
 
 export default class Header extends Component{
@@ -12,6 +11,7 @@ export default class Header extends Component{
         }
 
         Observer.subscribe(Observer.events.loginUser, this.userLoggedIn)
+        // Observer.subscribe(Observer.events.logout, this.userLoggedIn)
     }
 
     userLoggedIn = username => this.setState({username})
@@ -27,7 +27,8 @@ export default class Header extends Component{
 
         const login =
             <div id="profile">
-                <Link to="/login">login</Link>
+                <Link to="/login">Login</Link>
+                <Link to="/register">Register</Link>
             </div>
 
         return (

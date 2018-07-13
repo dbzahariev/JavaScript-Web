@@ -26,11 +26,11 @@ export default class Notification extends Component {
 
     render = () => {
         if (this.state.success) {
-            return <div id="infoBox" className="notification"><span>{this.state.success}</span></div>
+            return <div id="infoBox" className="alert alert-success notification"><strong>Success!</strong> {this.state.success}</div>
         } else if (this.state.error) {
-            return <div id="errorBox" className="notification"><span>{this.state.error}</span></div>
+            return <div id="errorBox" className="alert alert-danger notification"><strong>Error!</strong> {this.state.error}</div>
         } else if (this.state.loading) {
-            return <div id="loadingBox" className="notification"><span>{this.state.loading}</span></div>
+            return <div id="loadingBox" className="alert alert-info notification"><strong>Loading!</strong> {this.state.loading}</div>
         }
 
         return null
