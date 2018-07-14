@@ -7,7 +7,7 @@ export default class Catalog extends Component {
                 <div className='element'>
                     <span className="name">Name: {this.props.title}</span>
                     <br />
-                    <span className="price">Price: {this.props.price}</span>
+                    <span className="price">Price: {this.props.price} lv</span>
                 </div>                
             </article>
 

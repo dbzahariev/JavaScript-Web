@@ -26,9 +26,6 @@ footer {
 }
 
 .welcome {
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
     padding: 20px;
 }
 
@@ -58,9 +55,6 @@ footer {
     background-color: #3b60af49;
     vertical-align: top;
     padding: 20px;
-    max-width: 90%;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 
@@ -73,10 +67,27 @@ body {
     max-width: 100%;
 }
 
-
-#createForm {
-    max-width: 90%;
+#menu, .welcomeHome, .viewCatalog {
     margin-left: auto;
     margin-right: auto;
+    max-width: 90%; 
+}
 
+.viewCatalog {
+    padding: 0;
+}
+#root>div>div>div.viewCatalog>div>*{
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+#map {
+    height: 400px;
+    width: 100%;
+}
+
+iframe {
+    border: 0;
+    width:800;
+    height:300;
 }

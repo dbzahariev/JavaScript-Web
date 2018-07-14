@@ -1,11 +1,6 @@
 #menu {
     /* display: block; */
     border: 1px solid black;
-    /* margin: 15px; */
-    /* width: 200px; */
-    max-width: 90%;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 #menu .title {
@@ -20,7 +15,6 @@
     display: block;
     text-decoration: none;
     padding: 5px 10px;
-    margin: 10px;
 }
 
 .nav:hover {

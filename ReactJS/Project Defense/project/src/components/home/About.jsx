@@ -1,4 +1,5 @@
 import React from 'react'
+import Map from '../containers/GoogleMaps'
 
 export default () => (
     <div className="about welcome">
@@ -58,5 +59,7 @@ export default () => (
                 </p>
             </div>
         </div>
+
+        <Map />
     </div>
 )
