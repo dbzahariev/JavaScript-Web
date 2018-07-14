@@ -2,22 +2,22 @@ import React from 'react'
 
 export default () => (
     <div className="about welcome">
-        <h1>Welcome to Lorem</h1>
+        <h1>Welcome to our shop</h1>
         
         <div className="col-xs-4 img-label">
             <div className="txt-align-center">
-                <img src="http://pngimg.com/uploads/phone/phone_PNG48995.png" alt="Телефон за връзка" />
+                <img src="http://pngimg.com/uploads/phone/phone_PNG48995.png" alt="" />
             </div>
             <div>
                 <p style={{textAlign: 'center'}}>
                     <span style={{fontSize: 16}}>
-                        <strong>Телефон:</strong>
+                        <strong>Telephone:</strong>
                     </span>
                 </p>
                 <p style={{textAlign: 'center'}}>
                     <span style={{fontSize: 16}}>
                         <strong>0888 88 8888</strong>
-                    &nbsp;(между 10:00-18:00ч.)</span>
+                    &nbsp;(Between 10:00-18:00ч.)</span>
                 </p>
             </div>
         </div>
@@ -34,7 +34,7 @@ export default () => (
                 </p>
                 <p>
                     <span>
-                        <a href="mailto:lorem@lorem.lorem">lorem@lorem.lorem</a>
+                        <a href="mailto:office@shop.com">office@shop.com</a>
                     </span>
                 </p>
             </div>

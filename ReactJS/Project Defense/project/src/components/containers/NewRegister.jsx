@@ -40,11 +40,11 @@ export default class Signup extends Component {
   handleSubmit = async event => {
     event.preventDefault();
 
-    this.setState({ newUser: "test" });
+    this.setState({ newUser: this.state.email });
 
-    Requester.post('user', '', 'basic', { username: this.state.email, password: this.state.password })
+    Requester.post('user', '', 'basic', { email: this.state.email, password: this.state.password })
       .then(res => {
-        Observer.trigger(Observer.events.loginUser, res.username)
+        Observer.trigger(Observer.events.loginUser, res.email)
         sessionStorage.setItem('authtoken', res._kmd.authtoken)
       })
   }

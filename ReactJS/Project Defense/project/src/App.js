@@ -12,6 +12,7 @@ import ItemsList from './components/item/ItemsList'
 import CreateItem from './components/item/CreateItem'
 import About from './components/home/About';
 import './style/site.css'
+import './style/Other.css'
 
 class App extends Component {
   render() {

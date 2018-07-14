@@ -30,16 +30,17 @@ export default class Login extends Component {
     handleSubmit = event => {
         event.preventDefault();
 
-        Requester.post('user', 'login', 'basic', {username: this.state.email, password: this.state.password})
+        Requester.post('user', 'login', 'basic', {email: this.state.email, password: this.state.password})
             .then(res => {
-                Observer.trigger(Observer.events.loginUser, res.username)
-                Observer.trigger(Observer.events.notification, { type: 'success', message: `Hello ${res.username}` })
+                Observer.trigger(Observer.events.loginUser, res.email)
+                Observer.trigger(Observer.events.notification, { type: 'success', message: `Hello ${res.email}` })
                 sessionStorage.setItem('authtoken', res._kmd.authtoken)
+                sessionStorage.setItem('email', this.state.email)
                 this.props.history.push('/home')
             })
             .catch(res => {
                 Observer.trigger(Observer.events.notification, { type: 'error', message: res.responseJSON.description })
-                this.setState({ username: '', password: '' })
+                this.setState({ email: '', password: '' })
             })
     }
 
@@ -48,7 +49,7 @@ export default class Login extends Component {
             <div className="Login">
                 <form onSubmit={this.handleSubmit}>
                     <FormGroup controlId="email" bsSize="large">
-                        <ControlLabel>Email or username</ControlLabel>
+                        <ControlLabel>Email</ControlLabel>
                         <FormControl
                             autoFocus
                             type="email"

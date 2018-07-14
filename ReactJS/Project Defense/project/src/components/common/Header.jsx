@@ -7,19 +7,25 @@ export default class Header extends Component{
     constructor(props){
         super(props)
         this.state = {
-            username: null
+            email: null
         }
 
         Observer.subscribe(Observer.events.loginUser, this.userLoggedIn)
         // Observer.subscribe(Observer.events.logout, this.userLoggedIn)
+        
     }
 
-    userLoggedIn = username => this.setState({username})
+    userLoggedIn = email => this.setState({email})
+    componentDidMount() {
+        // console.log()
+        Observer.subscribe(Observer.events.loginUser, this.userLoggedIn)
+        this.setState({email: sessionStorage.getItem('email')})
+    }
 
     render= ()=>{
         const logout =
             <div id="profile">
-                <span id="username">Hello, {this.state.username}!
+                <span id="email">Hello, {this.state.email}!
                 <Link to="/logout">logout</Link>
                 </span>
             </div>
@@ -35,7 +41,7 @@ export default class Header extends Component{
             <header>
                 <span className="header">Welcome to our shop</span>
                 <br/>
-                {this.state.username ? logout : login}
+                {this.state.email ? logout : login}
             </header>
         )
     }

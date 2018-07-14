@@ -6,7 +6,7 @@ export default class RegisterForm extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            username: null,
+            email: null,
             password: null
         }
     }
@@ -23,7 +23,7 @@ export default class RegisterForm extends Component {
 
         Requester.post('user', '', 'basic', this.state)
             .then(res => {
-                Observer.trigger(Observer.events.loginUser, res.username)
+                Observer.trigger(Observer.events.loginUser, res.email)
                 sessionStorage.setItem('authtoken', res._kmd.authtoken)
             })
     }
@@ -33,8 +33,8 @@ export default class RegisterForm extends Component {
         <form id="registerForm" onClick={this.handleSubmit}>
             <h2>Register</h2>
             <div className="form-group">
-                <label>Username:</label>
-                <input className="form-control" name="username" onChange={this.handleChange} type="text" />
+                <label>Email:</label>
+                <input className="form-control" name="email" onChange={this.handleChange} type="text" />
             </div>
             <div className="form-group">
                 <label>Password:</label>

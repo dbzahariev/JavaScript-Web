@@ -15,10 +15,6 @@ body {
     background: #dddddd;
 }
 
-#container {
-    margin: 10px;
-}
-
 .content {
     background: #ffffff;
     overflow: auto;
@@ -44,90 +40,28 @@ footer {
 .about {
     background: #ddf9c0;
     padding: 20px;
-    /* margin: 10px; */
-    /* height: 340px; */
-    /* float: left; */
+    max-width: 90%;
 }
 
 .signup {
     float: right;
-    /* width: 200px; */
 }
 
-#loginForm {
-    /* display: block;
-    background: #ddf9c0;
-    margin: 10px;
-    padding: 10px;
-    height: 150px;
-    position: relative; */
+#root>div>div>*>*>div.txt-align-center>img {
+    max-height: 60px;
 }
-
-#loginForm>* {
-    /* width: 150px;
-    box-sizing: border-box; */
-}
-
-#registerForm {
-    /* display: block;
-    background: #ddf9c0;
-    margin: 10px;
-    padding: 10px;
-    height: 180px;
-    position: relative; */
-}
-
-#registerForm>* {
-    /* width: 150px;
-    box-sizing: border-box; */
-}
-
-#btnLogin, #btnRegister {
-    /* display: block;
-    position: absolute;
-    bottom: 10px;  */
-}
-
-#loginForm {
-    /* background: #ddf9c0;
-    margin: 10px;
-    padding: 10px */
-}
-
-#loginForm, #registerForm {
-    /* text-align: left;
-    margin: 10px; */
-}
-
-#btnLogin, #btnRegister {
-    /* margin-left: 30%;
-    margin-top: 10px; */
-}
-
-#viewSignIn>div>div.about>div>div.txt-align-center>img {
-    max-height: 60px
+#root>div>div>*>*>div.txt-align-center>img {
+    max-height: 60px;
 }
 
 .welcomeHome {
     background-color: #3b60af49;
     vertical-align: top;
-    overflow: auto;
-    max-width: 80%;
-    /* margin-left: 10px; */
-    margin-left: auto;
-    /* margin-right: auto; */
     padding: 20px;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
 }
-
-.welcomeHome>* {
-    vertical-align: top;
-    overflow: auto;
-}
-
-
-
-
-
 
 
 
@@ -135,122 +69,14 @@ footer {
 body {
     font-family: Arial, Helvetica, sans-serif;
 }
-
-input[type=text],
-input[type=password] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
+#root>div>div {
+    max-width: 100%;
 }
 
-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-}
 
-button:hover {
-    opacity: 0.8;
-}
+#createForm {
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
 
-.cancelbtn {
-    width: auto;
-    padding: 10px 18px;
-    background-color: #f44336;
-}
-
-.imgcontainer {
-    text-align: center;
-    margin: 24px 0 12px 0;
-    position: relative;
-}
-
-img.avatar {
-    width: 40%;
-    border-radius: 50%;
-}
-
-.container {
-    padding: 16px;
-}
-
-span.psw {
-    float: right;
-    padding-top: 16px;
-}
-
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgb(0, 0, 0);
-    background-color: rgba(0, 0, 0, 0.4);
-    padding-top: 60px;
-}
-
-.modal-content {
-    background-color: #fefefe;
-    margin: 5% auto 15% auto;
-    border: 1px solid #888;
-    width: 80%;
-}
-
-.close {
-    position: absolute;
-    right: 25px;
-    top: 0;
-    color: #000;
-    font-size: 35px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: red;
-    cursor: pointer;
-}
-
-.animate {
-    -webkit-animation: animatezoom 0.6s;
-    animation: animatezoom 0.6s
-}
-
-@-webkit-keyframes animatezoom {
-    from {
-        -webkit-transform: scale(0)
-    }
-    to {
-        -webkit-transform: scale(1)
-    }
-}
-
-@keyframes animatezoom {
-    from {
-        transform: scale(0)
-    }
-    to {
-        transform: scale(1)
-    }
-}
-
-@media screen and (max-width: 300px) {
-    span.psw {
-        display: block;
-        float: none;
-    }
-    .cancelbtn {
-        width: 100%;
-    }
 }
