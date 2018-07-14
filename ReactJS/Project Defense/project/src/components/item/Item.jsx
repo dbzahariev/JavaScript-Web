@@ -3,9 +3,11 @@ import React, { Component } from 'react'
 export default class Catalog extends Component {
     render = () => {
         return (
-            <article className="post">
+            <article className="item">
                 <div className='element'>
-                    <h1>Name: {this.props.title} Price: {this.props.price}</h1>
+                    <span className="name">Name: {this.props.title}</span>
+                    <br />
+                    <span className="price">Price: {this.props.price}</span>
                 </div>                
             </article>
 

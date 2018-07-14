@@ -1,4 +1,4 @@
-.item {
+.post {
     overflow: auto;
     background: #ddf9c0;
     margin: 15px;
@@ -50,7 +50,7 @@
     text-align: center;
 }
 
-.item-content {
+.post-content {
     display: block;
     vertical-align: top;
     padding: 10px;
