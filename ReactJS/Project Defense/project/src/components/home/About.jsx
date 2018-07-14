@@ -1,9 +1,8 @@
 import React from 'react'
 
 export default () => (
-    <div className="about">
+    <div className="about welcome">
         <h1>Welcome to Lorem</h1>
-        {/* <p>Share interesting links and discuss great content. It's what's happening now.</p> */}
         
         <div className="col-xs-4 img-label">
             <div className="txt-align-center">

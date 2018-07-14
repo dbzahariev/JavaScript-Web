@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Header from './components/common/Header';
-import {Redirect, Route} from 'react-router-dom'
+import {Route} from 'react-router-dom'
 import Home from './components/home/Home';
 import Notification from './components/common/Notification';
 import Logout from './components/user/Logout'
@@ -10,6 +10,8 @@ import register from './components/containers/NewRegister';
 import Navbar from './components/common/Navigation'
 import ItemsList from './components/item/ItemsList'
 import CreateItem from './components/item/CreateItem'
+import About from './components/home/About';
+import './style/site.css'
 
 class App extends Component {
   render() {
@@ -20,12 +22,13 @@ class App extends Component {
           <Notification />
           <Navbar />
           <Route path='/home' exact component={Home} />
-          <Route path='/' render={() => <Redirect to ='/home' />} />
+          {/* <Route path='/' render={() => <Redirect to ='/home' />} /> */}
           <Route path='/items' exact component={ItemsList} />
           <Route path='/logout' exact component={Logout} />
           <Route path="/login" exact component={Login} />
           <Route path="/register" exact component={register} />
           <Route path="/createItem" exact component={CreateItem} />
+          <Route path="/about" exact component={About} />
           </div>
       </div>
     );
