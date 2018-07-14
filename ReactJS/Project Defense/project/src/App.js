@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Header from './components/common/Header';
-import {Route} from 'react-router-dom'
+import {Redirect, Route} from 'react-router-dom'
 import Home from './components/home/Home';
 import Notification from './components/common/Notification';
 import Logout from './components/user/Logout'
@@ -19,7 +19,8 @@ class App extends Component {
           <Header />
           <Notification />
           <Navbar />
-          <Route path='/' exact component={Home} />
+          <Route path='/home' exact component={Home} />
+          <Route path='/' render={() => <Redirect to ='/home' />} />
           <Route path='/items' exact component={ItemsList} />
           <Route path='/logout' exact component={Logout} />
           <Route path="/login" exact component={Login} />

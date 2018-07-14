@@ -97,7 +97,7 @@ export default class Signup extends Component {
       <div className="Signup">
         {this.state.newUser === null
           ? this.renderForm()
-          : this.props.history.push('/')}
+          : this.props.history.push('/home')}
       </div>
     );
   }

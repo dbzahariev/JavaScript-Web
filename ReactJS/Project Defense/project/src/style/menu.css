@@ -1,5 +1,5 @@
 #menu {
-    display: inline-block;
+    display: block;
     float: right;
     border: 1px solid black;
     margin: 15px;
@@ -25,9 +25,6 @@
     background: #ddf9c0;
 }
 
-.nav:visited {
-}
-
 .nav.active {
-    background:blue;
+    background:rgba(79, 64, 214, 0.267);
 }

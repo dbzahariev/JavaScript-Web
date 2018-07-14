@@ -18,6 +18,6 @@ export default class logout extends Component {
 
     render = ()=> {
         this.logout()
-        return <Redirect to ='/' />
+        return <Redirect to ='/home' />
     }
 }

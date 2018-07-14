@@ -35,7 +35,7 @@ export default class Login extends Component {
                 Observer.trigger(Observer.events.loginUser, res.username)
                 Observer.trigger(Observer.events.notification, { type: 'success', message: `Hello ${res.username}` })
                 sessionStorage.setItem('authtoken', res._kmd.authtoken)
-                this.props.history.push('/')
+                this.props.history.push('/home')
             })
             .catch(res => {
                 Observer.trigger(Observer.events.notification, { type: 'error', message: res.responseJSON.description })
