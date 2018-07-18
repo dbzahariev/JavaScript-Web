@@ -6,6 +6,8 @@
         sayHello(): string{
             return `Hello from ${this.name}!`
         }
+
+    
 }
 
 let cat = new Cat('Ivan', 5)
