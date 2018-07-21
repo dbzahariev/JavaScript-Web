@@ -1,5 +1,5 @@
 import { Article } from '../models/Article.model';
-import { data } from '../data/seed'
+import { data } from './seed'
 export class ArticleData {
     getData(): Article[] {
         let articles:Article[] = []
