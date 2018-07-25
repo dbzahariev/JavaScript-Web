@@ -1,9 +1,12 @@
+import { MoviesService } from './services/movies.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { MoviesComponent } from './movies/movies.component';
 import { NavigationComponent } from './navigation/navigation.component';
+
+import { HttpClient } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -12,9 +15,12 @@ import { NavigationComponent } from './navigation/navigation.component';
     NavigationComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClient,
   ],
-  providers: [],
+  providers: [
+    MoviesService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
