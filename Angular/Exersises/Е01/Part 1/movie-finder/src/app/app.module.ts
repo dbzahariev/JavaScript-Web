@@ -17,6 +17,7 @@ import { HttpClient } from '@angular/common/http'
   imports: [
     BrowserModule,
     HttpClient,
+    
   ],
   providers: [
     MoviesService,
