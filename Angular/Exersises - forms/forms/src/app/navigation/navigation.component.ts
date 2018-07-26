@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navigation.component.css']
 })
 export class NavigationComponent implements OnInit {
-  title:string = "Rame App"
+  title: string = "Rame App"
   constructor() { }
 
   ngOnInit() {
