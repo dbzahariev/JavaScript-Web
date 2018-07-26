@@ -11,7 +11,7 @@ export class MoviesService {
 
   constructor(private http: HttpClient) { }
 
-  getPopular(): Observable<object> {
+  getPopular(): Observable<object>{
     return this.http.get(this.path + this.popular + this.authentication + this.apiKey)
   }
 }
