@@ -1,5 +1,6 @@
-import { MoviesService } from './../Service/movies.service';
+// import { MoviesService } from './../Service/movies.service';
 import { Component, OnInit } from '@angular/core';
+import { MoviesService } from '../services/movies.service'
 
 @Component({
   selector: 'app-movies',
@@ -10,7 +11,7 @@ export class MoviesComponent implements OnInit {
   title:string = "rame App"
   popular : Object
 
-  constructor(private moviesService : MoviesService) { }
+  constructor(private moviesService: MoviesService) { }
 
   ngOnInit() {
     this.moviesService

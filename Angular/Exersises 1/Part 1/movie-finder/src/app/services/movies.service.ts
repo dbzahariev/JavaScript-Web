@@ -6,15 +6,13 @@ const apiKey = '19493a1d160b6bf6c61e4d834191777c'
 
 @Injectable()
 export class MoviesService {
-  private path = 'https://api.themoviedb.org/3/';
-  private popular = 'discover/movie?sort_by=popularity.desc';
-  private authentication = '&api_key=';
-
-  url = `${this.path}${this.popular}${this.authentication}${apiKey}`
+  private path: string = 'https://api.themoviedb.org/3/';
+  private popular: string = 'discover/movie?sort_by=popularity.desc';
+  private authentication: string = '&api_key=';
 
   constructor(private http: HttpClient) { }
 
   getPopular() : Observable<object> {
-    return this.http.get(this.url)
+    return this.http.get(`${this.path}${this.popular}${this.authentication}${apiKey}`)
   }
 }
