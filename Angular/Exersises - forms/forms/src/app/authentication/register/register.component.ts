@@ -9,9 +9,10 @@ import { RegisterModel } from '../moduls/register.modul';
 export class RegisterComponent implements OnInit {
   model: RegisterModel
 
-  constructor() { }
+  constructor() {
+    this.model = new RegisterModel('', '', '', '', '', 18)
+  }
 
   ngOnInit() {
   }
-
 }
