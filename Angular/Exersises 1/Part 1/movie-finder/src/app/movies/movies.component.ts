@@ -17,16 +17,20 @@ export class MoviesComponent implements OnInit {
     this.moviesService
       .getPopular()
       .subscribe(data => {
-        this.popular = data['results'];
-        console.log(this.popular)
+        this.popular = data;
       });
 
-    
-      this.moviesService
-      .getTeaters()
+    this.moviesService
+      .getPopular()
       .subscribe(data => {
-        this.teaters = data['results'];
-        console.log(this.teaters)
+        this.popular = data;
+        console.log(data)
+      });
+
+      this.moviesService
+        .getTeaters()
+        .subscribe(data => {
+          this.teaters = data;
       });
   }
 }
