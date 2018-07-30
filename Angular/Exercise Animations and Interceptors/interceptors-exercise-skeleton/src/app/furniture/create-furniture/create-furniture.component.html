@@ -1,4 +1,4 @@
-{{model | json}}
+{{BindingModel | json}}
 <div class="container">
     <div class="row space-top">
         <div class="col-md-12">
@@ -12,29 +12,27 @@
                 <div class="form-group">
                     <label class="form-control-label" for="new-make">Make</label>
                     <input class="form-control" id="new-make" type="text"
-                    maxlength="4"
-                    name="make" [(ngModel)] = "model.make" #make="ngModel">
+                    minlength="4"
+                    name="make" [(ngModel)] = "BindingModel.make" #make="ngModel">
                 </div>
                 <div class="form-group has-success">
                     <label class="form-control-label" for="new-model">Model</label>
                     <input class="form-control is-valid" id="new-model" type="text"
                     minlength="4"
-                    name="model" [(ngModel)] = "model.model" #model="ngModel">
-                    <div class="form-control-feedback">This input value is valid</div>
+                    name="model" [(ngModel)] = "BindingModel.model" #model="ngModel">
                 </div>
                 <div class="form-group has-danger">
                     <label class="form-control-label" for="new-year">Year</label>
                     <input class="form-control is-invalid" id="new-year" type="number"
                     min="1950"
                     max="2050"
-                    name="year" [(ngModel)] = "model.year" #year="ngModel">
-                    <div class="form-control-feedback">This input value is invalid</div>
+                    name="year" [(ngModel)] = "BindingModel.year" #year="ngModel">
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" for="new-description">Description</label>
                     <input class="form-control" id="new-description" type="text"
                     minlength="10"
-                    name="description" [(ngModel)] = "model.description" #description="ngModel">
+                    name="description" [(ngModel)] = "BindingModel.description" #description="ngModel">
                 </div>
             </div>
             <div class="col-md-4">
@@ -42,18 +40,18 @@
                     <label class="form-control-label" for="new-price">Price</label>
                     <input class="form-control" id="new-price" type="number"
                     min="1"
-                    name="price" [(ngModel)] = "model.price" #price="ngModel">
+                    name="price" [(ngModel)] = "BindingModel.price" #price="ngModel">
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" for="new-image">Image</label>
                     <input class="form-control" id="new-image" type="text"
                     required
-                    name="image" [(ngModel)] = "model.image" #image="ngModel">
+                    name="image" [(ngModel)] = "BindingModel.image" #image="ngModel">
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" for="new-material">Material (optional)</label>
                     <input class="form-control" id="new-material" type="text"
-                    name="material" [(ngModel)] = "model.material" #material="ngModel">
+                    name="material" [(ngModel)] = "BindingModel.material" #material="ngModel">
                 </div>
                 <input type="submit" class="btn btn-primary" value="Create" />
             </div>
