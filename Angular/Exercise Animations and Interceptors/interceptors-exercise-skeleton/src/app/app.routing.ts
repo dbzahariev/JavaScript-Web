@@ -18,7 +18,7 @@ const routes : Routes = [
   { path: 'furniture/all', component: AllFurnitureComponent },
   { path: 'furniture/create', component: CreateFurnitureComponent },
   { path: 'furniture/my', component: MyFurnitureComponent },
-  { path: 'furniture/details/{id}', component: FurnitureDetailsComponent },
+  { path: 'furniture/details/:id', component: FurnitureDetailsComponent },
 ]
 
 @NgModule({

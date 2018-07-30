@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CreateModel } from '../models/create.model';
 
 @Component({
   selector: 'app-create-furniture',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./create-furniture.component.css']
 })
 export class CreateFurnitureComponent implements OnInit {
+  model: CreateModel
 
-  constructor() { }
+  constructor(body: CreateModel) {
+    this.model = new CreateModel('', '', -1, '', -1, '', '')
+  }
 
   ngOnInit() {
   }
 
+  create(){
+    console.log(this.model)
+  }
 }
