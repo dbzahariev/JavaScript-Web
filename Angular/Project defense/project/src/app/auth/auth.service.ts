@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
   token : string;
+  user: string;
 
   constructor(
     private toastr : ToastrService,
@@ -30,6 +31,7 @@ export class AuthService {
     firebase.auth()
       .signInWithEmailAndPassword(email, password)
       .then((data) => {
+        this.user = data.user.email
         firebase.auth()
           .currentUser
           .getIdToken()
@@ -37,7 +39,7 @@ export class AuthService {
             this.token = token;
           })
 
-          this.router.navigate(['/recipes/start']);
+          this.router.navigate(['/']);
           this.toastr.success('Logged In', 'Success');
       })
       .catch((err) => {

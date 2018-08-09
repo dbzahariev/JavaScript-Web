@@ -11,11 +11,13 @@ import { HeaderComponent } from './header/header.component';
 import { AppRoutingModule } from './app-routing.module';
 import { TokenInterceptor } from './interceptors/token.interceptor';
 import { AuthModule } from './auth/auth.module';
+import { HelloComponent } from './hello/hello.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    HelloComponent
   ],
   imports: [
     BrowserModule,

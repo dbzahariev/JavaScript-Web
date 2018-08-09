@@ -3,16 +3,15 @@ import { Route, RouterModule } from '@angular/router';
 import { SigninComponent } from './auth/signin/signin.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { AuthGuard } from './auth/auth.guard';
+import { HelloComponent } from './hello/hello.component';
 
 const routes : Route[] = [
   { path: 'auth', children: [
     { path: 'signin', component: SigninComponent },
-    { path: 'signup', component: SignupComponent },
-  ]  },
-  
-  {
-    path: '**', redirectTo: '/auth/signin'
-  }
+    { path: 'signup', component: SignupComponent },]
+  },
+  { path: '', component: HelloComponent, canActivate: [AuthGuard] },
+  // { path: '**', redirectTo: '/auth/signin' }
 ]
 
 @NgModule({

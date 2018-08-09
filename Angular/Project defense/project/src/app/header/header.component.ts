@@ -6,15 +6,11 @@ import { AuthService } from '../auth/auth.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
   dropdownLi : string = "nav-item dropdown";
   dropdownMenu : string = "dropdown-menu";
 
-  constructor(private authService : AuthService) { }
-
-  ngOnInit() {
-  }
-
+  constructor(private authService : AuthService) {  }
   
   expand() {
     this.dropdownLi.endsWith('show') 
