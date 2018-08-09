@@ -24,7 +24,7 @@ import { AuthModule } from './auth/auth.module';
     FormsModule,
     HttpClientModule,
     AppRoutingModule,
-    AuthModule,
+    AuthModule
   ],
   providers: [
     {
