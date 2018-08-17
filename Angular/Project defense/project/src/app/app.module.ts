@@ -12,6 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { TokenInterceptor } from './interceptors/token.interceptor';
 import { AuthModule } from './auth/auth.module';
 import { HelloComponent } from './hello/hello.component';
+import { RecipeModule } from './recipe/recipe.module';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { HelloComponent } from './hello/hello.component';
     FormsModule,
     HttpClientModule,
     AppRoutingModule,
-    AuthModule
+    AuthModule,
+    RecipeModule
   ],
   providers: [
     {
