@@ -25,6 +25,7 @@ export class RecipeService {
             res[i].imagePath, res[i].description));
         }
 
+        debugger
         return recipes;
       }));
   }

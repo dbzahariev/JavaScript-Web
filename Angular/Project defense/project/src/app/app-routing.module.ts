@@ -14,7 +14,7 @@ const routes : Route[] = [
   },
   { path: '', component: HelloComponent},
   { path: 'recipes/list', component: RecipeListComponent},
-  { path: 'recipes/create', component: RecipeCreateComponent, canActivate: [AuthGuard] }
+  { path: 'recipes/create', canActivate: [AuthGuard], component: RecipeCreateComponent}
 
   // {},
   // { path: '**', redirectTo: '/auth/signin' }
