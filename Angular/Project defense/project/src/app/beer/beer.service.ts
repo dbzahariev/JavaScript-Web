@@ -1,48 +1,48 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
-import { RecipeList } from './models/recipe-list.model';
-import { RecipeCreate } from './models/recipe-create.model';
+import { BeerList } from './models/beer-list.model';
+import { BeerCreate } from './models/beer-create.model';
 
-const baseUrl = 'https://workshop-b6e0e.firebaseio.com/recipes/'
+const baseUrl = 'https://workshop-b6e0e.firebaseio.com/beers/'
 
 @Injectable({
   providedIn: 'root'
 })
-export class RecipeService {
+export class BeerService {
   constructor(
     private http : HttpClient
   ) {  }
 
-  getAllRecipes() {
+  getAllBeers() {
     debugger
     return this.http.get(`${baseUrl}.json`)
       .pipe(map((res : Response) => {
         const ids = Object.keys(res);
-        const recipes : RecipeList[] = [];
+        const beers : BeerList[] = [];
         for (const i of ids) {
-          recipes.push(new RecipeList(i, res[i].name, 
+          beers.push(new BeerList(i, res[i].name, 
             res[i].imagePath, res[i].description));
         }
 
         debugger
-        return recipes;
+        return beers;
       }));
   }
 
-  createRecipe(body : RecipeCreate) {
+  createBeer(body : BeerCreate) {
     return this.http.post(`${baseUrl}.json`, body);
   }
 
-  getById(recipeId : string) {
-    return this.http.get<RecipeList>(`${baseUrl}${recipeId}/.json`);
+  getById(beerId : string) {
+    return this.http.get<BeerList>(`${baseUrl}${beerId}/.json`);
   }
 
-  editRecipe(body) {
+  editBeer(body) {
     return this.http.patch(`${baseUrl}.json`, body);
   }
 
-  deleteRecipe(recipeId : string) {
-    return this.http.delete(`${baseUrl}${recipeId}/.json`);
+  deleteBeer(beerId : string) {
+    return this.http.delete(`${baseUrl}${beerId}/.json`);
   }
 }

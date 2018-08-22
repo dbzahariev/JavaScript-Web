@@ -4,8 +4,8 @@ import { SigninComponent } from './auth/signin/signin.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { AuthGuard } from './auth/auth.guard';
 import { HelloComponent } from './hello/hello.component';
-import { RecipeListComponent } from './recipe/recipe-list/recipe-list.component';
-import { RecipeCreateComponent } from './recipe/recipe-create/recipe-create.component';
+import { BeerListComponent } from './beer/beer-list/beer-list.component';
+import { BeerCreateComponent } from './beer/beer-create/beer-create.component';
 
 const routes : Route[] = [
   { path: 'auth', children: [
@@ -13,8 +13,8 @@ const routes : Route[] = [
     { path: 'signup', component: SignupComponent },]
   },
   { path: '', component: HelloComponent},
-  { path: 'recipes/list', component: RecipeListComponent},
-  { path: 'recipes/create', canActivate: [AuthGuard], component: RecipeCreateComponent}
+  { path: 'beers/list', component: BeerListComponent},
+  { path: 'beers/create', canActivate: [AuthGuard], component: BeerCreateComponent}
 
   // {},
   // { path: '**', redirectTo: '/auth/signin' }
