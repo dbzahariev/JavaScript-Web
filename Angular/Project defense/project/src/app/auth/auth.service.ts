@@ -50,9 +50,11 @@ export class AuthService {
   logout() {
     firebase.auth().signOut()
       .then(() => {
-        this.router.navigate(['/auth/signin']);
+        this.router.navigate(['/']);
         this.token = null;
       });
+      this.user = ""
+      this.toastr.success('Logged Out', 'Success');
   }
 
   getToken() {
