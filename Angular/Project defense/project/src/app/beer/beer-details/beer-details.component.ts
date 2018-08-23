@@ -3,6 +3,7 @@ import { BeerList } from '../models/beer-list.model';
 import { BeerService } from '../beer.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { AuthService } from '../../auth/auth.service';
 
 @Component({
   selector: 'app-beer-details',
@@ -17,7 +18,8 @@ export class BeerDetailsComponent implements OnInit {
     private beerService : BeerService,
     private route : ActivatedRoute,
     private toastr : ToastrService,
-    private router : Router
+    private router : Router,
+    private authService: AuthService
   ) { }
 
   ngOnInit() {

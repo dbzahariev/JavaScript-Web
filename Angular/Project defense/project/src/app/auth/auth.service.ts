@@ -3,6 +3,8 @@ import * as firebase from 'firebase';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 
+import { BeerList } from './../beer/./models/beer-list.model';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -98,4 +100,8 @@ export class AuthService {
 
     return this.token != null;
   }
+
+  isAuthor(beer: BeerList): boolean {
+    return beer.author === this.user
+ }
 }

@@ -4,6 +4,7 @@ export class BeerList {
     public name : string,
     public imagePath : string,
     public description: string,
-    public location: string
+    public location: string,
+    public author: string
   ) { }
 }

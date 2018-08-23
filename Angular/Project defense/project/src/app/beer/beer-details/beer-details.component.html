@@ -18,8 +18,8 @@
   <br>
   <div class="row">
     <div class="col-xs-12">
-        <ul>
-            <li><a style="cursor: pointer;" routerLink="/beers/edit/{{id}}">Edit Beer</a></li>
+        <ul *ngIf="authService.isAuthor(beer)">
+            <li ><a  style="cursor: pointer;" routerLink="/beers/edit/{{id}}">Edit Beer</a></li>
             <li><a style="cursor: pointer;" (click)="delete()">Delete Beer</a></li>
         </ul>
     </div>
