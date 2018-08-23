@@ -17,7 +17,7 @@ export class BeerCreateComponent implements OnInit {
     private toastr : ToastrService,
     private router : Router
   ) {
-    this.bindingModel = new BeerCreate("", "", "");
+    this.bindingModel = new BeerCreate("", "", "", "");
   }
 
   ngOnInit() {

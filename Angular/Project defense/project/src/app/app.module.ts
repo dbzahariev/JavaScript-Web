@@ -18,7 +18,7 @@ import { BeerModule } from './beer/beer.module';
   declarations: [
     AppComponent,
     HeaderComponent,
-    HelloComponent
+    HelloComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,14 +28,14 @@ import { BeerModule } from './beer/beer.module';
     HttpClientModule,
     AppRoutingModule,
     AuthModule,
-    BeerModule
+    BeerModule,
   ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
       multi: true
-    }
+    },
   ],
   bootstrap: [AppComponent]
 })

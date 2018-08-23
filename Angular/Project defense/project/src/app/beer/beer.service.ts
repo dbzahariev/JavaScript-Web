@@ -21,7 +21,7 @@ export class BeerService {
         const beers : BeerList[] = [];
         for (const i of ids) {
           beers.push(new BeerList(i, res[i].name, 
-            res[i].imagePath, res[i].description));
+            res[i].imagePath, res[i].description, res[i].location));
         }
 
         return beers;
