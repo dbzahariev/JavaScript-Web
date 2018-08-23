@@ -7,6 +7,7 @@ import { HelloComponent } from './hello/hello.component';
 import { BeerListComponent } from './beer/beer-list/beer-list.component';
 import { BeerCreateComponent } from './beer/beer-create/beer-create.component';
 import { BeerDetailsComponent } from './beer/beer-details/beer-details.component';
+import { BeerEditComponent } from './beer/beer-edit/beer-edit.component';
 
 const routes : Route[] = [
   { path: 'auth', children: [
@@ -14,9 +15,10 @@ const routes : Route[] = [
     { path: 'signup', component: SignupComponent },]
   },
   { path: '', component: HelloComponent},
-  { path: 'beers/list', canActivate: [AuthGuard], component: BeerListComponent},
+  { path: 'beers/list', component: BeerListComponent},
   { path: 'beers/create', canActivate: [AuthGuard], component: BeerCreateComponent},
-  { path: 'beers/details/:id', canActivate: [AuthGuard], component: BeerDetailsComponent }
+  { path: 'beers/details/:id', canActivate: [AuthGuard], component: BeerDetailsComponent },
+  { path: 'beers/edit/:id', canActivate: [AuthGuard], component: BeerEditComponent }
 
   // {},
   // { path: '**', redirectTo: '/auth/signin' }

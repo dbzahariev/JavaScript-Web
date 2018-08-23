@@ -15,7 +15,6 @@ export class BeerService {
   ) {  }
 
   getAllBeers() {
-    debugger
     return this.http.get(`${baseUrl}.json`)
       .pipe(map((res : Response) => {
         const ids = Object.keys(res);
@@ -25,7 +24,6 @@ export class BeerService {
             res[i].imagePath, res[i].description));
         }
 
-        debugger
         return beers;
       }));
   }

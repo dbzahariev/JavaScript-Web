@@ -1,4 +1,5 @@
 <div *ngIf="beer">
+  <br>
   <div  class="row">
     <div class="col-xs-12">
       <img
@@ -8,11 +9,13 @@
         style="max-height: 300px;">
     </div>
   </div>
+  <br>
   <div class="row">
     <div class="col-xs-12">
       <h1>{{beer.name}}</h1>
     </div>
   </div>
+  <br>
   <div class="row">
     <div class="col-xs-12">
         <ul>
@@ -21,16 +24,17 @@
         </ul>
     </div>
   </div>
+  <br>
   <div class="row">
     <div class="col-xs-12">
-      {{beer.description}}
+      Description: {{beer.description}}
     </div>
   </div>
   <br>
   <div *ngIf="beer.location">
     <div class="row">
       <div class="col-xs-12">
-        {{beer.location}}
+        Location: {{beer.location}}
       </div>
     </div>
   </div>

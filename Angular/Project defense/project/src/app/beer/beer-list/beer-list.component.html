@@ -6,9 +6,10 @@
 <hr>
 <div class="row">
   <div *ngFor="let beer of beers | async" class="col-xs-12">
+    <br>
       <a
       routerLink="/beers/details/{{beer.id}}"
-      style="cursor: pointer;"
+      style="cursor: pointer; width: 200px; height: 200px;"
       class="list-group-item clearfix">
       <div class="pull-left">
         <h4 class="list-group-item-heading">{{beer.name}}</h4>
@@ -19,7 +20,7 @@
               src="{{beer.imagePath}}"
               alt="{{beer.name}}"
               class="img-responsive"
-              style="max-height: 50px;">
+              style="max-height: 100px;">
        </span>
     </a>      
   </div>

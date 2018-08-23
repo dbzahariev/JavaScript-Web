@@ -49,6 +49,24 @@
             </div>
           </div>
         </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="location">Location</label>
+              <input
+                required
+                type="text"
+                id="location"
+                [(ngModel)]="bindingModel.location"
+                name="location"
+                class="form-control">
+            </div>
+          </div>
+        </div>
+        
+
+
+
        <button class="btn btn-primary" [disabled]="f.invalid" type="submit">Edit</button>
       </form>
     </div>

@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class AuthService {
   token : string;
   user: string;
+  isAnonimus: boolean = false;
 
   constructor(
     private toastr : ToastrService,
@@ -27,24 +28,46 @@ export class AuthService {
       });
   }
 
-  signIn(email : string, password : string) {
-    firebase.auth()
-      .signInWithEmailAndPassword(email, password)
-      .then((data) => {
-        this.user = data.user.email
+  signIn(email : string, password : string, anonimus: boolean) {
+    if (anonimus === true) {
+      firebase.auth().signInAnonymously().then((data)=>{
+        this.isAnonimus = anonimus
         firebase.auth()
           .currentUser
           .getIdToken()
-          .then((token : string) => {
+          .then((token: string) => {
             this.token = token;
           })
-
-          this.router.navigate(['/']);
-          this.toastr.success('Logged In', 'Success');
       })
-      .catch((err) => {
-        this.toastr.error(err.message, 'Warning');
-      });
+        .catch((err) => {
+          this.toastr.error(err.message, 'Warning');
+        });
+    }
+
+    this.isAnonimus = anonimus
+    if (anonimus === false){
+    
+      firebase.auth()
+        .signInWithEmailAndPassword(email, password)
+        .then((data) => {
+          this.isAnonimus = anonimus
+          this.user = data.user.email
+          firebase.auth()
+            .currentUser
+            .getIdToken()
+            .then((token : string) => {
+              this.token = token;
+            })
+
+            this.router.navigate(['/']);
+            this.toastr.success('Logged In', 'Success');
+        })
+        .catch((err) => {
+          this.toastr.error(err.message, 'Warning');
+        });
+      }
+
+    this.isAnonimus = anonimus
   }
 
   logout() {
@@ -69,6 +92,10 @@ export class AuthService {
   }
 
   isAuthenticated() : boolean {
+    if (this.isAnonimus){
+      return false
+    }
+
     return this.token != null;
   }
 }

@@ -17,7 +17,12 @@ export class SigninComponent implements OnInit {
   login(form : NgForm) {
     const email = form.value.email;
     const password = form.value.password;
-    this.authService.signIn(email, password);
+    const anonimus = form.value.anonimus;
+    let isAnonimus = false
+    if (anonimus === "true")
+    {
+      isAnonimus = true;
+    }
+    this.authService.signIn(email, password, isAnonimus);
   }
-
 }
