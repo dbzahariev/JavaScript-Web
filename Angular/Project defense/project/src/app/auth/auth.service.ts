@@ -9,46 +9,46 @@ import { BeerList } from './../beer/./models/beer-list.model';
   providedIn: 'root'
 })
 export class AuthService {
-  token : string;
+  token: string;
   user: string;
-  isAnonimus: boolean = false;
+  isAnonimus = false;
 
   constructor(
-    private toastr : ToastrService,
-    private router : Router
+    private toastr: ToastrService,
+    private router: Router
   ) { }
 
-  signUp(email: string, password : string) {
+  signUp(email: string, password: string) {
     firebase.auth()
     .createUserWithEmailAndPassword(email, password)
       .then((data) => {
         this.toastr.success('Signed Up', 'Success');
         this.router.navigate(['/auth/signin']);
-      })
+      )
       .catch((err) => {
         this.toastr.error(err.message, 'Warning');
       });
   }
 
-  signIn(email : string, password : string, anonimus: boolean) {
+  signIn(email: string, password: string, anonimus: boolean) {
     if (anonimus === true) {
-      firebase.auth().signInAnonymously().then((data)=>{
-        this.isAnonimus = anonimus
+      firebase.auth().signInAnonymously().then((data) => {
+        this.isAnonimus = anonimus;
         firebase.auth()
           .currentUser
           .getIdToken()
           .then((token: string) => {
             this.token = token;
-          })
+          });
       })
         .catch((err) => {
           this.toastr.error(err.message, 'Warning');
-        });
+        })
     }
 
     this.isAnonimus = anonimus
-    if (anonimus === false){
-    
+    if (anonimus === false) {
+
       firebase.auth()
         .signInWithEmailAndPassword(email, password)
         .then((data) => {
@@ -57,19 +57,19 @@ export class AuthService {
           firebase.auth()
             .currentUser
             .getIdToken()
-            .then((token : string) => {
+            .then((token: string) => {
               this.token = token;
             })
 
             this.router.navigate(['/']);
-            this.toastr.success('Logged In', 'Success');
+            this.toastr.success('Logged In', 'Success')
         })
         .catch((err) => {
-          this.toastr.error(err.message, 'Warning');
+          this.toastr.error(err.message, 'Warning')
         });
       }
 
-    this.isAnonimus = anonimus
+    this.isAnonimus = anonimus;
   }
 
   logout() {
@@ -78,7 +78,7 @@ export class AuthService {
         this.router.navigate(['/']);
         this.token = null;
       });
-      this.user = ""
+      this.user = '';
       this.toastr.success('Logged Out', 'Success');
   }
 
@@ -86,22 +86,22 @@ export class AuthService {
     firebase.auth()
     .currentUser
     .getIdToken()
-    .then((token : string) => {
+    .then((token: string) => {
       this.token = token;
-    })
+    });
 
     return this.token;
   }
 
-  isAuthenticated() : boolean {
-    if (this.isAnonimus){
-      return false
+  isAuthenticated(): boolean {
+    if (this.isAnonimus) {
+      return false;
     }
 
     return this.token != null;
   }
 
   isAuthor(beer: BeerList): boolean {
-    return beer.author === this.user
+    return beer.author === this.user;
  }
 }
