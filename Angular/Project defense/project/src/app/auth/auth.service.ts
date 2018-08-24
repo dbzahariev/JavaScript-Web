@@ -24,7 +24,7 @@ export class AuthService {
       .then((data) => {
         this.toastr.success('Signed Up', 'Success');
         this.router.navigate(['/auth/signin']);
-      )
+        })
       .catch((err) => {
         this.toastr.error(err.message, 'Warning');
       });
