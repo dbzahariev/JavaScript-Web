@@ -103,5 +103,12 @@ export class AuthService {
 
   isAuthor(beer: BeerList): boolean {
     return beer.author === this.user;
- }
+  }
+
+  isAdmin(): boolean {
+    if (this.user.toString().endsWith('@gmail.com')) {
+      return true
+    }
+    return false
+  }
 }

@@ -19,8 +19,12 @@
   <div class="row">
     <div class="col-xs-12">
         <ul *ngIf="authService.isAuthor(beer)">
-            <li ><a  style="cursor: pointer;" routerLink="/beers/edit/{{id}}">Edit Beer</a></li>
-            <li><a style="cursor: pointer;" (click)="delete()">Delete Beer</a></li>
+          <div  style="cursor: pointer; color: blue; text-decoration: underline;">
+            <li><a routerLink="/beers/edit/{{id}}">Edit Beer</a></li>
+          </div>
+          <div *ngIf="authService.isAdmin()" style="color: blue; text-decoration: underline;">
+              <li><a (click)="delete()">Delete Beer</a></li>
+            </div>
         </ul>
     </div>
   </div>
