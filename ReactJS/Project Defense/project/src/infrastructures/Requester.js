@@ -3,25 +3,28 @@ const kinveyBaseUrl = "https://baas.kinvey.com/";
 const kinveyAppKey = "kid_ByLBw0l77";
 const kinveyAppSecret = "cc84886438ed4167a0232206d0491a9b";
 
-
 function makeAuth(type) {
     return type === 'basic'
         ?  'Basic ' + btoa(kinveyAppKey + ':' + kinveyAppSecret)
         :  'Kinvey ' + sessionStorage.getItem('authtoken');
 }
 
-function makeRequest(method, module, endpoint, auth) {
+function makeRequest(method, module, endpoint, auth, query) {
+    let url = kinveyBaseUrl + module + '/' + kinveyAppKey + '/' + endpoint;
+    if (query)
+    url+='?query' + JSON.stringify(query)
+
     return {
         method,
-        url: kinveyBaseUrl + module + '/' + kinveyAppKey + '/' + endpoint,
+        url: url,
         headers: {
             'Authorization': makeAuth(auth)
         }
     };
 }
 
-function get (module, endpoint, auth) {
-    return $.ajax(makeRequest('GET', module, endpoint, auth));
+function get (module, endpoint, auth, query) {
+    return $.ajax(makeRequest('GET', module, endpoint, auth, query));
 }
 
 function post (module, endpoint, auth, data) {
