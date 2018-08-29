@@ -10,11 +10,9 @@ import register from './components/containers/NewRegister';
 import Navbar from './components/common/Navigation'
 import ItemsList from './components/item/ItemsList'
 import CreateItem from './components/item/CreateItem'
-import { withAdminAuthorizazition } from './components/user/withAutorization.hocks.ts'
 import About from './components/home/About';
 import './style/site.css'
 import './style/Other.css'
-
 
 class App extends Component {
   render() {
@@ -24,7 +22,7 @@ class App extends Component {
           <Header />
           <Notification />
           <Navbar />
-          {/* <Route path='/home' exact component={Home} /> */}
+          <Route path='/home' exact component={Home} />
           {/* <Route path='/' render={() => <Redirect to ='/home' />} /> */}
           <Route path='/items' exact component={ItemsList} />
           <Route path='/logout' exact component={Logout} />
@@ -32,7 +30,6 @@ class App extends Component {
           <Route path="/register" exact component={register} />
           <Route path="/createItem" exact component={CreateItem} />
           <Route path="/about" exact component={About} />
-          <Route path="/test" exact component={withAdminAuthorizazition}  />
           </div>
       </div>
     );

@@ -45,6 +45,7 @@ export default class Signup extends Component {
       .then(res => {
         Observer.trigger(Observer.events.loginUser, res.email)
         sessionStorage.setItem('authtoken', res._kmd.authtoken)
+        sessionStorage.setItem('userId', res._id)
       })
   }
 

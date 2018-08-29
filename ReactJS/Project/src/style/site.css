@@ -1,0 +1,93 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.div {
+    border: 1px solid black;
+}
+
+body {
+    background: #dddddd;
+}
+
+.content {
+    background: #ffffff;
+    overflow: auto;
+}
+
+footer {
+    text-align: center;
+    margin: 10px;
+}
+
+.welcome {
+    padding: 20px;
+}
+
+.welcome>* {
+    vertical-align: top;
+    overflow: auto;
+}
+
+.about {
+    background: #ddf9c0;
+    padding: 20px;
+    max-width: 90%;
+}
+
+.signup {
+    float: right;
+}
+
+#root>div>div>*>*>div.txt-align-center>img {
+    max-height: 60px;
+}
+#root>div>div>*>*>div.txt-align-center>img {
+    max-height: 60px;
+}
+
+.welcomeHome {
+    background-color: #3b60af49;
+    vertical-align: top;
+    padding: 20px;
+}
+
+
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+#root>div>div {
+    max-width: 100%;
+}
+
+#menu, .welcomeHome, .viewCatalog {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 90%; 
+}
+
+.viewCatalog {
+    padding: 0;
+}
+#root>div>div>div.viewCatalog>div>*{
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+#map {
+    height: 400px;
+    width: 100%;
+}
+
+iframe {
+    border: 0;
+    width:800;
+    height:300;
+}

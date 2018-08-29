@@ -30,6 +30,7 @@ export default class Login extends Component {
 
     handleSubmit = event => {
         event.preventDefault();
+        console.log('hi')
 
         Requester.post('user', 'login', 'basic', {username: this.state.email, password: this.state.password})
             .then(res => {
@@ -37,11 +38,13 @@ export default class Login extends Component {
                 Observer.trigger(Observer.events.notification, { type: 'success', message: `Hello ${res.email}` })
                 sessionStorage.setItem('authtoken', res._kmd.authtoken)
                 sessionStorage.setItem('email', this.state.email)
+                sessionStorage.setItem('userId', res._id)
                 // this.props.history.push('/home')
                 document.location.href = '/home'
-
+                console.log(res)
             })
             .catch(res => {
+                console.log('email', this.state.email, 'pass', this.state.password)
                 Observer.trigger(Observer.events.notification, { type: 'error', message: res.responseJSON.description })
                 this.setState({ email: '', password: '' })
             })

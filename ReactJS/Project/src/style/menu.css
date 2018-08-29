@@ -1,0 +1,30 @@
+#menu {
+    /* display: block; */
+    border: 1px solid black;
+}
+
+#menu .title {
+    background: #ddf9c0;
+    font-size: 1.25em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.nav {
+    font-size: 1.25em;
+    display: block;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+.nav:hover {
+    background: #ddf9c0;
+}
+
+.nav.active {
+    background:rgba(79, 64, 214, 0.267);
+}
+
+#menu>a {
+    display: inline;
+}

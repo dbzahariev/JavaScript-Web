@@ -14,6 +14,7 @@ function makeRequest(method, module, endpoint, auth, query) {
     if (query)
     url+='?query' + JSON.stringify(query)
 
+    console.log(url)
     return {
         method,
         url: url,
@@ -28,6 +29,7 @@ function get (module, endpoint, auth, query) {
 }
 
 function post (module, endpoint, auth, data) {
+    console.log(module, endpoint, auth, data)
     let req = makeRequest('POST', module, endpoint, auth);
     req.data = data;
     return $.ajax(req);
