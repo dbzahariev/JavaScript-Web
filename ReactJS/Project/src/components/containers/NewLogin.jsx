@@ -38,7 +38,6 @@ export default class Login extends Component {
                 sessionStorage.setItem('authtoken', res._kmd.authtoken)
                 sessionStorage.setItem('email', this.state.email)
                 sessionStorage.setItem('roles', res.roles)
-                // this.props.history.push('/home')
                 document.location.href = '/home'
                 
             })

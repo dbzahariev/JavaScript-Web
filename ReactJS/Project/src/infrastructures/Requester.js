@@ -44,5 +44,5 @@ export default {
     get,
     post,
     update,
-    remove
+    remove,
 }
