@@ -6,5 +6,4 @@ import './index.css';
 
 const Hello = () => <div>Hello</div>;
 
-// ReactDOM.render(<App /> , document.getElementById('root'));
 ReactDOM.render(<Hello /> , document.getElementById('root'));

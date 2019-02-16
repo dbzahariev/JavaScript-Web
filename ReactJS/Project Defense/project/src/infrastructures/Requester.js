@@ -1,7 +1,9 @@
 import $ from 'jquery';
 const kinveyBaseUrl = "https://baas.kinvey.com/";
-const kinveyAppKey = "kid_ByLBw0l77";
-const kinveyAppSecret = "cc84886438ed4167a0232206d0491a9b";
+// const kinveyAppKey = "kid_ByLBw0l77";
+const kinveyAppKey = "kid_rkgIDsfrE";
+// const kinveyAppSecret = "cc84886438ed4167a0232206d0491a9b";
+const kinveyAppSecret = "888999447f6e44469c4223884b374088";
 
 function makeAuth(type) {
     return type === 'basic'
@@ -14,7 +16,6 @@ function makeRequest(method, module, endpoint, auth, query) {
     if (query)
     url+='?query' + JSON.stringify(query)
 
-    console.log(url)
     return {
         method,
         url: url,
@@ -29,7 +30,7 @@ function get (module, endpoint, auth, query) {
 }
 
 function post (module, endpoint, auth, data) {
-    console.log(module, endpoint, auth, data)
+    // console.log(module, endpoint, auth, data)
     let req = makeRequest('POST', module, endpoint, auth);
     req.data = data;
     return $.ajax(req);

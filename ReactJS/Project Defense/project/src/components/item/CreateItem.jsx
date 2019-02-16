@@ -25,18 +25,18 @@ export default class RegisterForm extends Component {
 
         let selectedCategoryOne = document.getElementById("selectedCategory").value.toString().toLowerCase()
 
-        this.setState({ selectedCategory: selectedCategoryOne})
+        this.setState({ selectedCategory: selectedCategoryOne })
 
-        Requester.post('appdata', this.state.selectedCategory.toLowerCase(), 'kinvey', { title: this.state.title, price: this.state.price})
+        Requester.post('appdata', this.state.selectedCategory.toLowerCase(), 'kinvey', { title: this.state.title, price: this.state.price })
             .then(res => {
                 Observer.trigger(Observer.events.notification, { type: 'success', message: `Item with name: ${this.state.title} was created!` })
-                this.setState({title: null, price: null})
+                this.setState({ title: null, price: null })
                 let op = document.getElementById("selectedCategory").getElementsByTagName("option");
                 op[0].disabled = false
                 document.getElementById("selectedCategory").selectedIndex = "0"
             })
             .catch(err => {
-                console.log(err)
+                Observer.trigger(Observer.events.notification, { type: 'error', message: err.message })
             })
     }
 
@@ -57,7 +57,7 @@ export default class RegisterForm extends Component {
     getCategory = () => {
         Requester.get('appdata', 'category', 'kinvey')
             .then(res => {
-                res.unshift({ title: 'Select category' })
+                res.unshift({ categoryTitle: 'Select category' })
                 this.setState({ categories: res })
             })
             .catch(err => {
@@ -75,17 +75,17 @@ export default class RegisterForm extends Component {
                 <h2>Create Item</h2>
                 <select id="selectedCategory" ref="selectedCategory" value={this.state.selectedCategory}
                     onChange={(e) => this.selectCategory()}>
-                    {this.state.categories.map((c, index) => { return <option key={index}>{c.title}</option> })}
+                    {this.state.categories.map((c, index) => { return <option key={index}>{c.categoryTitle}</option> })}
                 </select>
                 <div className="form-group">
                     <label>Name:</label>
-                    <input value={this.state.title || ""}  className="form-control" name="title" onChange={this.handleChange} type="text" />
+                    <input value={this.state.title || ""} className="form-control" name="title" onChange={this.handleChange} type="text" />
                 </div>
                 <div className="form-group">
                     <label>Price:</label>
-                    <input value={this.state.price||""} className="form-control" name="price" onChange={this.handleChange} type="text" />
+                    <input value={this.state.price || ""} className="form-control" name="price" onChange={this.handleChange} type="text" />
                 </div>
-                <br/>
+                <br />
                 <input id="btnCreate" className="btn btn-primary btn-sm mb-2" type="submit" defaultValue="Create Item" />
             </form>
         )

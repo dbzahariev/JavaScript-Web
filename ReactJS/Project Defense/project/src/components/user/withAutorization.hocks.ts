@@ -1,33 +1,37 @@
-import React, {Component} from 'c:/Users/Ramsess/Downloads/js-web/JavaScript-Web/ReactJS/Project Defense/project/node_modules/@types/react/index'
+import React, { Component } from 'react'
 import requester from '../../infrastructures/Requester'
 
-function withAtuhorization (Component, role){
+function withAtuhorization(Component, role) {
     return class withAtuhorization extends Component {
-        constructor(props){
+        constructor(props) {
             super(props);
             this.state = {
                 roles: []
             }
         }
 
-        componentDidMount = ()=>{
+        componentDidMount = () => {
+            // console.log('hhhi')
             let id = sessionStorage.getItem('userId')
             requester.get('user', id, 'kinvey')
-                .then((data)=>console.log(data))
+                .then(
+                    (data) => {
+                        // console.log(data)
+                    }
+                )
         }
 
-        /*render = () => {
+        render = () => {
             let userHasAccess = this.state.roles.indexOf(role) !== -1
             if (userHasAccess) {
                 return `<Component {...this.props}`
             } else {
                 return `<h1>Unautorized<h1>`
             }
-        }   
-        */
-       render = () => {
-           return `<h1>hi</h1>`
-       } 
+        }
+        // render = () => {
+        //     return `<h1>hi</h1>`
+        // }
     }
 }
 

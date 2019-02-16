@@ -17,7 +17,7 @@ export default class Catalog extends Component {
     getCategory = () => {
         Requester.get('appdata', 'category', 'kinvey')
             .then(res => {
-                res.unshift({title: 'Select category'})
+                res.unshift({categoryTitle: 'Select category'})
                 this.setState({ categories: res })
             })
             .catch(err=>{
@@ -64,7 +64,7 @@ export default class Catalog extends Component {
         <div className="viewCatalog">
             <select id="selectedCategory" ref="selectedCategory" value={this.state.selectedCategory}
                 onChange={(e) => this.selectCategory()}>
-                    {this.state.categories.map((c, index)=>{return <option key={index}>{c.title}</option>})}
+                    {this.state.categories.map((c, index)=>{return <option key={index}>{c.categoryTitle}</option>})}
             </select>
             <div className="viewItems">
                 {this.state.items.map(p=><Item key={p._id} {...p}/>)}

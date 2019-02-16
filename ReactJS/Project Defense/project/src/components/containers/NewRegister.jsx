@@ -41,7 +41,8 @@ export default class Signup extends Component {
 
     this.setState({ newUser: this.state.email });
 
-    Requester.post('user', '', 'basic', { email: this.state.email, password: this.state.password })
+    Requester.post('user', '', 'basic', { email: this.state.email, password: this.state.password, 
+      username: this.state.email, position: "5c659568c892215f50087012" })
       .then(res => {
         Observer.trigger(Observer.events.loginUser, res.email)
         sessionStorage.setItem('authtoken', res._kmd.authtoken)

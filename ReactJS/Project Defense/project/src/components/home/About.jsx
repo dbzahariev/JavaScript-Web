@@ -1,5 +1,5 @@
 import React from 'react'
-import Map from '../containers/GoogleMaps'
+// import Map from '../containers/GoogleMaps'
 
 export default () => (
     <div className="about welcome">
@@ -23,7 +23,7 @@ export default () => (
             </div>
         </div>
 
-        <div className="col-xs-4 img-label">
+        {/* <div className="col-xs-4 img-label">
             <div className="txt-align-center">
                 <img src="https://www.freepnglogos.com/uploads/email-logo-png-30.png" alt="E-mail" />
             </div>
@@ -39,7 +39,7 @@ export default () => (
                     </span>
                 </p>
             </div>
-        </div>
+        </div> */}
 
 
         <div className="col-xs-4 img-label">
@@ -60,6 +60,6 @@ export default () => (
             </div>
         </div>
 
-        <Map />
+        {/* <Map /> */}
     </div>
 )

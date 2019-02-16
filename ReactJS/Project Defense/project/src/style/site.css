@@ -35,9 +35,10 @@ footer {
 }
 
 .about {
-    background: #ddf9c0;
+    background: #c8f09e;
     padding: 20px;
-    max-width: 90%;
+    /* max-width: 90%; */
+
 }
 
 .signup {
