@@ -12,7 +12,7 @@ import PositionList from './components/position/positionList'
 import CreateItem from './components/item/CreateItem'
 import Home from './components/home/Home'
 // import { withAdminAuthorizazition } from './components/user/withAutorization.hocks.ts'
-import { withAdminAuthorizazition } from './components/user/withAutorization.hocks.ts'
+import { withAdminAuthorization } from './components/user/withAutorization'
 import About from './components/home/About';
 import './style/site.css'
 import './style/Other.css'
@@ -33,9 +33,8 @@ class App extends Component {
           <Route path='/logout' exact component={Logout} />
           <Route path="/login" exact component={Login} />
           <Route path="/register" exact component={register} />
-          <Route path="/createItem" exact component={CreateItem} />
+          <Route path="/createItem" exact component={withAdminAuthorization(CreateItem)} />
           <Route path="/about" exact component={About} />
-          <Route path="/test" exact component={withAdminAuthorizazition}  />
           </div>
       </div>
     );

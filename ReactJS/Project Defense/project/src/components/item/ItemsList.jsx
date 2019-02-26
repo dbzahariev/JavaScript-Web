@@ -29,7 +29,8 @@ export default class Catalog extends Component {
             })
     }
 
-    componentDidMount = ()=> { this.getCategory()
+    componentDidMount = ()=> {
+        this.getCategory()
         Observer.trigger(Observer.events.notification, { type: 'success', message: "" }) }
 
 

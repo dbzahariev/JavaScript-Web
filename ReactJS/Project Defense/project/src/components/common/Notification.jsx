@@ -1,37 +1,49 @@
-import React, { Component } from 'react'
-import observer from '../../infrastructures/Observer';
+import React, { Component } from 'react';
+import Observer from '../../infrastructures/Observer'
+// import '../../styles/notifications.css';
 import '../../style/notifications.css'
+
+const DEFAULT_STATE = {
+    message: null,
+    success: null,
+    error: null,
+    loading: null
+}
 
 export default class Notification extends Component {
     constructor(props) {
-        super(props)
-        this.state = {
-            success: null,
-            error: null,
-            loading: null,
-        }
+        super(props);
+        this.state = DEFAULT_STATE;
 
-
-        // observer.subscribe(observer.events.notification, this.showNotification)
+        Observer.subscribe(Observer.events.notification, this.showNotification);
     }
 
     showNotification = data => {
-        // let message = data.message
-        // let type = data.type
-        // this.setState({ type: message })
+        let message = data.message;
+        let type = data.type;
+        this.setState({ [type]: type, message: message });
     }
 
-    // hideNotification = ev => this.setState = { success: null, error: null, loading: null }
+    hideNotification = ev => this.setState(DEFAULT_STATE);
 
     render = () => {
-        // if (this.state.success) {
-        //     return <div id="infoBox" className="alert alert-success  alert-dismissible"><strong>Success!</strong> {this.state.success}</div>
-        // } else if (this.state.error) {
-        //     return <div id="errorBox" className="alert alert-danger  alert-dismissible"><strong>Error!</strong> {this.state.error}</div>
-        // } else if (this.state.loading) {
-        //     return <div id="loadingBox" className="alert alert-info  alert-dismissible"><strong>Loading!</strong> {this.state.loading}</div>
-        // }
+        let notificationId;
+        if (this.state.success) {
+            notificationId = 'infoBox';
+        } else if (this.state.error) {
+            notificationId = 'errorBox';
+        } else if (this.state.loading) {
+            notificationId = 'loadingBox';
+        }
 
-        return null
+        if (this.state.message) {
+            return (
+                <div id={notificationId} className="notification" onClick={this.hideNotification}>
+                    <span>{this.state.message}</span>
+                </div>)
+        } else {
+            return null;
+        }
     }
+
 }

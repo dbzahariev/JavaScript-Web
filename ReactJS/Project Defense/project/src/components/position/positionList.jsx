@@ -85,6 +85,7 @@ export default class Catalog extends Component {
             }
         }
 
+
         if (arr.length > 0) {
             for (let i = 0; i <= arr.length; i++) {
                 if (arr[i]) {
@@ -112,7 +113,7 @@ export default class Catalog extends Component {
                 <div>
                     <table>
                         <thead>
-                            <tr>{["id", "name", "Position"].map((h) => <th key={h}>{h}</th>)}</tr>
+                            <tr>{["id", "name", "Position", "button"].map((h) => <th key={h}>{h}</th>)}</tr>
                         </thead>
                         <tbody>
                             {Object.keys(arr).map((k) => {
@@ -122,6 +123,7 @@ export default class Catalog extends Component {
                                         <td>{k}</td>
                                         <td>{data.name}</td>
                                         <td>{data.position}</td>
+                                        <td><button onClick={(e) => this.hendleDelete(k, data.name, data.position)}>delete</button></td>
                                         {/* <td>{data.c}</td> */}
                                         {/* <td>{data.d}</td> */}
                                         {/* <td>{data.e}</td> */}
@@ -134,6 +136,21 @@ export default class Catalog extends Component {
             );
         }
     };
+
+    hendleDelete = (data1, data2, data3) => {
+        // ev.preventDefault();
+        // console.log(kk)
+        // console.log(ev.target)
+        // console.log(this)
+        console.log(data1)
+        console.log(data2)
+        console.log(data3)
+        // let fieldName = ev.target.name
+        // let fieldValue = ev.target.value
+
+        // this.setState({ [fieldName]: fieldValue })
+    }
+
 
     selectPosition = () => {
         if (this.refs.selectedPosition.value !== 'Select position' || this.refs.selectedPosition.value !== '') {

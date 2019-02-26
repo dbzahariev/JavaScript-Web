@@ -31,13 +31,17 @@ export default class Login extends Component {
     handleSubmit = event => {
         event.preventDefault();
 
-        Requester.post('user', 'login', 'basic', {username: this.state.email, password: this.state.password})
+        Requester.post('user', 'login', 'basic', { username: this.state.email, password: this.state.password })
             .then(res => {
                 Observer.trigger(Observer.events.loginUser, res.email)
                 Observer.trigger(Observer.events.notification, { type: 'success', message: `Hello ${res.email}` })
                 sessionStorage.setItem('authtoken', res._kmd.authtoken)
                 sessionStorage.setItem('email', this.state.email)
                 sessionStorage.setItem('userId', res._id)
+
+
+
+                sessionStorage.setItem('roleInfo', res.role)
                 this.props.history.push('/home')
                 // document.location.href = '/home'
             })

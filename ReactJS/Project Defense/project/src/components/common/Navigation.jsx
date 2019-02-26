@@ -11,7 +11,7 @@ export default class Catalog extends Component {
                 <NavLink className="nav" to='/items'>Items</NavLink>
                 <NavLink className="nav" to='/createItem'>Create item</NavLink>
                 <NavLink className="nav" to='/about'>About</NavLink>
-                <NavLink className="nav" to='/position'>Position</NavLink>
+                <NavLink className="nav" to='/roles'>Roles</NavLink>
             </div>
         )
     }

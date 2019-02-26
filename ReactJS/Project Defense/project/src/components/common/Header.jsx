@@ -15,6 +15,7 @@ export default class Header extends Component{
     }
 
     userLoggedIn = email => this.setState({email})
+
     componentDidMount() {
         Observer.subscribe(Observer.events.loginUser, this.userLoggedIn)
         this.setState({email: sessionStorage.getItem('email')})
